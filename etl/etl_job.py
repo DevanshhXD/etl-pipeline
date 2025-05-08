@@ -57,7 +57,8 @@ def load_to_mysql(df):
     # Insert rows
     for _, row in df.iterrows():
         cursor.execute("""
-            INSERT INTO sales_data (order_id, product, quantity, price, date, total_price)
+            INSERT INTO sales_data (order_id, product,
+                        quantity, price, date, total_price)
             VALUES (%s, %s, %s, %s, %s, %s)
         """, tuple(row))
 
@@ -75,3 +76,4 @@ def main():
 
 if __name__ == "__main__":
     main()
+
