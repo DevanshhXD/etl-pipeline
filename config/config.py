@@ -1,3 +1,4 @@
+# Add this blank line at the end of your config.py file
 import os
 from dotenv import load_dotenv
 load_dotenv()
