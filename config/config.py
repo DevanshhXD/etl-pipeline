@@ -15,4 +15,3 @@ CONFIG = {
     "RDS_PASSWORD": os.getenv("RDS_PASSWORD"),
     "RDS_DB": "etldatabase"
 }
-

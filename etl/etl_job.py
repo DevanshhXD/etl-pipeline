@@ -1,14 +1,14 @@
+import os
+import sys
 import pandas as pd
 import boto3
 import io
 import mysql.connector
 
-import sys
-import os
-
 # Add the ROOT of the project to the system path
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
 from config.config import CONFIG
+
 
 def extract_from_s3():
     print("🔍 Extracting file from S3...")
@@ -23,10 +23,12 @@ def extract_from_s3():
     print(df.head())
     return df
 
+
 def transform_data(df):
     print("🔧 Transforming data...")
     df['total_price'] = df['quantity'] * df['price']
     return df
+
 
 def load_to_mysql(df):
     print("🛢️ Loading data to RDS MySQL...")
@@ -64,10 +66,12 @@ def load_to_mysql(df):
     conn.close()
     print("✅ Load complete!")
 
+
 def main():
     df = extract_from_s3()
     df = transform_data(df)
     load_to_mysql(df)
+
 
 if __name__ == "__main__":
     main()
