@@ -8,7 +8,7 @@ on:
 
 jobs:
   etl-checks:
-    runs-on: ubuntu-22.04  # Use Ubuntu 22.04 for more stability
+    runs-on: ubuntu-22.04  # Use Ubuntu 22.04 for more stability (if necessary)
 
     steps:
       - name: 📥 Checkout code
@@ -17,9 +17,7 @@ jobs:
       - name: 🐍 Set up Python
         uses: actions/setup-python@v4
         with:
-          python-version: 3.10  # Explicitly use Python 3.10
-        # Disable caching to avoid version issues
-          cache: false
+          python-version: 3.10
 
       - name: 📦 Install dependencies
         run: |
@@ -34,4 +32,5 @@ jobs:
       - name: 🐳 Build Docker image
         run: |
           docker build -t etl-job .
+
 
