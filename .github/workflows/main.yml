@@ -8,7 +8,7 @@ on:
 
 jobs:
   etl-checks:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-22.04  # Use Ubuntu 22.04 for more stability (if necessary)
 
     steps:
       - name: 📥 Checkout code
@@ -33,4 +33,3 @@ jobs:
         run: |
           docker build -t etl-job .
 
-      # Optional - push to DockerHub or Amazon ECR can be added here
