@@ -4,8 +4,6 @@ import io
 import boto3
 import mysql.connector
 import pandas as pd
-
-# Add the ROOT of the project to the system path
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
 from config.config import CONFIG
 
@@ -76,4 +74,3 @@ def main():
 
 if __name__ == "__main__":
     main()
-
