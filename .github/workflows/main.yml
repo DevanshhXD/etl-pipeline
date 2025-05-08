@@ -8,7 +8,7 @@ on:
 
 jobs:
   etl-checks:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-22.04  # Use Ubuntu 22.04 for more stability
 
     steps:
       - name: 📥 Checkout code
@@ -17,7 +17,9 @@ jobs:
       - name: 🐍 Set up Python
         uses: actions/setup-python@v4
         with:
-          python-version: 3.10
+          python-version: 3.10  # Explicitly use Python 3.10
+        # Disable caching to avoid version issues
+          cache: false
 
       - name: 📦 Install dependencies
         run: |
@@ -33,4 +35,3 @@ jobs:
         run: |
           docker build -t etl-job .
 
-      # Optional - push to DockerHub or Amazon ECR can be added here
