@@ -4,7 +4,6 @@ import io
 import boto3
 import mysql.connector
 import pandas as pd
-sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
 from config.config import CONFIG
 
 
