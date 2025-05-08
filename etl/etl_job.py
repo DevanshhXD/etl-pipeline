@@ -1,5 +1,3 @@
-import os
-import sys
 import io
 import boto3
 import mysql.connector
